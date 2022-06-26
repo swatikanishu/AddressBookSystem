@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class AddressBook implements IAddressBook {
     static Scanner input = new Scanner(System.in);
     ArrayList<PersonDetails> contact = new ArrayList<>();
-
     @Override
     public void createContact() {
         PersonDetails personDetails = new PersonDetails();
@@ -112,6 +111,20 @@ public class AddressBook implements IAddressBook {
         System.out.println("Please enter the correct first name");
     }
 
+    @Override
+    public void contactList() {
+        if (contact.isEmpty()) {
+            System.out.println("Your address book is empty.");
+            return;
+        }
+        System.out.println("\n Address Book:");
+        for (PersonDetails person : contact)
+        {
+            System.out.println("contact" + person.getFirstName());
+        }
+
+    }
+
 
     @Override
     public String toString() {
@@ -120,3 +133,4 @@ public class AddressBook implements IAddressBook {
                 '}';
     }
 }
+

@@ -9,7 +9,7 @@ public class AddressBookMain {
             char choice;
             IAddressBook addressBook = new AddressBook();
             do {
-                System.out.println("Select your Option: \n1.Add new Contact \n2.Edit Contact \n3.Delete Contact");
+                System.out.println("Select your Option: \n1.Add new Contact \n2.Edit Contact \n3.Delete Contact \n4. contactsList");
                 int option = input.nextInt();
                 switch (option) {
                     case 1:
@@ -20,6 +20,9 @@ public class AddressBookMain {
                         break;
                     case 3:
                         addressBook.deleteContact();
+                        break;
+                    case 4:
+                        addressBook.contactList();
                         break;
                 }
                 System.out.println("Are you wish to continue:  Y?N");
