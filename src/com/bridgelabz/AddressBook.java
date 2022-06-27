@@ -1,11 +1,13 @@
 package com.bridgelabz;
-
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Hashtable;
 import java.util.Scanner;
 
 public class AddressBook implements IAddressBook {
     static Scanner input = new Scanner(System.in);
     ArrayList<PersonDetails> contact = new ArrayList<>();
+
     @Override
     public void createContact() {
         PersonDetails personDetails = new PersonDetails();
@@ -93,6 +95,9 @@ public class AddressBook implements IAddressBook {
 
     @Override
     public void deleteContact() {
+        if(contact.isEmpty()){
+            System.out.println("address book is empty");
+        }
         System.out.println("\nEnter First Name of person You want to delete :- ");
         String firstName = input.next();
         String userChoice;
@@ -118,13 +123,11 @@ public class AddressBook implements IAddressBook {
             return;
         }
         System.out.println("\n Address Book:");
-        for (PersonDetails person : contact)
-        {
+        for (PersonDetails person : contact) {
             System.out.println("contact" + person.getFirstName());
         }
 
     }
-
 
     @Override
     public String toString() {
