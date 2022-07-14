@@ -12,7 +12,13 @@ public class AddressBook implements IAddressBook {
     public void createContact() {
         PersonDetails personDetails = new PersonDetails();
         System.out.println("Enter Your First Name: ");
-        personDetails.setFirstName(input.next());
+        String firstName = input.next();
+        if(!contact.isEmpty()) {
+            boolean isPresent = contact.stream().findFirst().equals(firstName);
+            System.out.println("Contact already added");
+            return;
+        }
+        personDetails.setFirstName(firstName);
         System.out.println("Enter Your Last Name: ");
         personDetails.setLastName(input.next());
         System.out.println("Enter Your Address: ");
@@ -136,4 +142,3 @@ public class AddressBook implements IAddressBook {
                 '}';
     }
 }
-
