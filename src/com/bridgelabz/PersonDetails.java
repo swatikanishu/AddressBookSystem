@@ -91,7 +91,7 @@ public class PersonDetails {
 
     @Override
     public String toString() {
-        return "PersonDetails{" +
+        return "Contacts{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
@@ -101,5 +101,4 @@ public class PersonDetails {
                 ", email='" + email + '\'' +
                 ", phoneNumber=" + phoneNumber +
                 '}';
-    }
-}
+    }}
