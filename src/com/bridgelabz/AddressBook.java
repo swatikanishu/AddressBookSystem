@@ -22,6 +22,7 @@ public class AddressBook {
             System.out.println("Enter 3 to Delete");
             System.out.println("Enter 4 to sort city");
             System.out.println("Enter 5 to sortContactByName");
+            System.out.println("Enter 6 to sortByCityAndState");
             switch (scan.nextInt()) {
                 case 1:
                     add();
@@ -37,6 +38,8 @@ public class AddressBook {
                     break;
                 case 5:
                     sortContactByName();
+                case 6:
+                    sortContactByCityAndState();
                     break;
                 default:
                     status = false;
@@ -162,9 +165,16 @@ public class AddressBook {
     }
 
     public void sortContactByName() {
-        list.stream().sorted((n1,n2)->n1.getFirstName().compareTo(n2.getFirstName())).forEach(System.out::println);
+        list.stream().sorted(Comparator.comparing(PersonDetails::getFirstName)).forEach(System.out::println);
+        System.out.println();
     }
 
+    public void sortContactByCityAndState( ){
+   list.stream().sorted(Comparator.comparing(PersonDetails::getCity)).forEach(System.out::println);
+        System.out.println();
+        list.stream().sorted(Comparator.comparing(PersonDetails::getState)).forEach(System.out::println);
+        System.out.println();
+    }
     @Override
     public String toString() {
         return "AddressBook{" +
