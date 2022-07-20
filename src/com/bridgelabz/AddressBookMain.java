@@ -6,7 +6,7 @@ public class AddressBookMain{
 
     public static void main(String[] args) {
         System.out.println("WELCOME TO ADDREES BOOK PROGRAM");
-        Map<String, AddressBook> map = new HashMap<>();
+        HashMap<String, AddressBook> map = new HashMap<>();//Creating HashMap
         System.out.println("Enter Number of address book you want to add");
         int count = scan.nextInt();
         int i = 0;
